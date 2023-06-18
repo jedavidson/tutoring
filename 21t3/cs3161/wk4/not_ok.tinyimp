@@ -1,0 +1,7 @@
+var x ·
+if 1 then
+    x := 1
+else
+    skip
+fi;
+x := x + 1

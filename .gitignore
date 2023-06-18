@@ -1,0 +1,12 @@
+# I'll try to make everything public, but I retain some local resources
+# (e.g. lab or assignment code I'm playing around with in my own time)
+# for my own sake that I either can't share, or it doesn't make sense to
+
+scratch/
+cs2521/21t1/
+
+# Unwanted files
+*.xopp
+*.xopp~
+*.o
+.DS_Store
