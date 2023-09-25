@@ -8,12 +8,16 @@
 int sum(List l) {
     int sum = 0;
 
+    /*
+    // In COMP1511, we would use a `while` loop like so:
     Node *curr = l;
     while (curr != NULL) {
         sum += curr->data;
         curr = curr->next;
     }
+    */
 
+    // ... but we can also use `for` loops:
     for (Node *curr = l; curr != NULL; curr = curr->next) {
         sum += curr->data;
     }
