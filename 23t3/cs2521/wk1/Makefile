@@ -1,13 +1,9 @@
-CC=clang
-CFLAGS=-Wall -Werror
+CC = clang
+CFLAGS = -Wall -Werror
 
-sum: sum.o List.o
-sum.o: sum.c List.h
+TARGETS = sum delete_first
 
-delete: delete.o List.o
-delete.o: delete.c List.h
-
-List.o: List.c List.h
+$(TARGETS): List.o
 
 clean:
-	rm -f *.o sum delete
+	rm -f *.o $(TARGETS)
