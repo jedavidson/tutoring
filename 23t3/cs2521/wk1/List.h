@@ -15,27 +15,24 @@
 #define LIST_H
 
 typedef struct node {
-  int data;
-  struct node *next;
+    int data;
+    struct node *next;
 } Node;
 
 typedef Node *List;
 
-// instead of struct node *x
-// i can do List x
-
 struct conlist {
-  Node *head;
+    Node *head;
 };
 
 typedef struct conlist *ConList;
 
-List read_list(int, char **);
-void show_list(List);
-void free_list(List);
+List read_list(int argc, char **argv);
+void show_list(List l);
+void free_list(List l);
 
-ConList read_conlist(int, char **);
-void show_conlist(ConList);
-void free_conlist(ConList);
+ConList read_conlist(int argc, char **argv);
+void show_conlist(ConList cl);
+void free_conlist(ConList cl);
 
 #endif // LIST_H

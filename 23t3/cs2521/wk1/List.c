@@ -3,9 +3,7 @@
 
 #include "List.h"
 
-
-static Node *new_node(int);
-
+static Node *new_node(int data);
 
 List read_list(int argc, char **argv) {
     List l = NULL;
@@ -41,7 +39,6 @@ void free_list(List l) {
     }
 }
 
-
 ConList read_conlist(int argc, char **argv) {
     ConList cl = malloc(sizeof(*cl));
     if (cl == NULL) {
@@ -62,7 +59,6 @@ void free_conlist(ConList cl) {
     free_list(cl->head);
     free(cl);
 }
-
 
 static Node *new_node(int data) {
     Node *n = malloc(sizeof(*n));

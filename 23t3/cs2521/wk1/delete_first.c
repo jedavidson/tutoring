@@ -3,12 +3,10 @@
 
 #include "List.h"
 
-
 /** Deletes the first occurrence of a value from a linked list. */
-void delete(ConList cl, int value) {
-    // TODO
+void delete_first(ConList cl, int value) {
+    // TODO: Complete this function!
 }
-
 
 int main(int argc, char **argv) {
     ConList cl = read_conlist(argc, argv);
@@ -17,7 +15,7 @@ int main(int argc, char **argv) {
     printf("Value to delete: ");
     scanf("%d", &value);
 
-    delete(cl, value);
+    delete_first(cl, value);
     printf("List after deleting %d is ", value);
     show_conlist(cl);
 

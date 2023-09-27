@@ -1,8 +1,6 @@
 CC=clang
 CFLAGS=-Wall -Werror
 
-myprog.o: myprog.c
-
 sum: sum.o List.o
 sum.o: sum.c List.h
 
