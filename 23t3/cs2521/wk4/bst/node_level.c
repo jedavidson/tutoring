@@ -1,12 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "BST.h"
 
-#define NOT_IN_TREE -1
+#define ABSENT_NODE_LEVEL -1
 
 /**
  * Computes the level of a node with a given value in a binary search tree,
- * or `NOT_IN_TREE` if no such node exists.
+ * or `ABSENT_NODE_LEVEL` if no such node exists.
  *
  * Time complexity: TODO
  * (where n is the number of nodes)
@@ -27,5 +28,5 @@ int main(int argc, char **argv) {
            count_greater(t, value));
 
     free_bst(t);
-    return 0;
+    return EXIT_SUCCESS;
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "BST.h"
 
@@ -24,5 +25,5 @@ int main(int argc, char **argv) {
            count_greater(t, value), value);
 
     free_bst(t);
-    return 0;
+    return EXIT_SUCCESS;
 }

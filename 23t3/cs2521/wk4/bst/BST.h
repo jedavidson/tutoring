@@ -6,13 +6,13 @@
 #ifndef BST_H
 #define BST_H
 
-struct BSTNode {
+struct node {
     int data;
-    struct BSTNode *left;
-    struct BSTNode *right;
+    struct node *left;
+    struct node *right;
 };
 
-typedef struct BSTNode *BST;
+typedef struct node *BST;
 
 /**
  * Creates a BST out of command-line arguments, assumed to be the
