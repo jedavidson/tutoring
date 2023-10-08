@@ -6,12 +6,25 @@
 /**
  * Counts the odd nodes in a binary search tree.
  *
- * Time complexity: TODO
- * (where n is the number of nodes)
+ * Time complexity: O(n), because we have to visit every node
+ * (where n is the number of nodes, h is the height)
  */
 int count_odds(BST t) {
-    // TODO: Complete this function!
-    return 0;
+    // Base case: an empty tree has no odd nodes
+    if (t == NULL) {
+        return 0;
+    }
+
+    // Recursive case: count the number of odd nodes in the subtrees,
+    // and then add 1 to that if the current node is odd
+    if (t->data % 2 == 1) {
+        return 1 + count_odds(t->left) + count_odds(t->right);
+    } else {
+        return count_odds(t->left) + count_odds(t->right);
+    }
+
+    // The above recursive case could also be written as
+    // return (t->data % 2 == 1) + count_odds(t->left) + count_odds(t->right);
 }
 
 int main(int argc, char **argv) {

@@ -6,12 +6,26 @@
 /**
  * Counts the number of nodes greater than some value in a binary search tree.
  *
- * Time complexity: TODO
- * (where n is the number of nodes)
+ * Time complexity: O(n), because in the worst case we have to visit each node
+ * (where n is the number of nodes, h is the height)
  */
 int count_greater(BST t, int value) {
-    // TODO: Complete this function!
-    return 0;
+    // Base case: there are no nodes greater in an empty tree
+    if (t == NULL) {
+        return 0;
+    }
+
+    // Recursive case: count the number of nodes greater in the subtrees,
+    // and then add 1 to if the current node is also greater
+    if (t->data > value) {
+        return 1 + count_greater(t->left, value) +
+               count_greater(t->right, value);
+    } else {
+        // Since (node values in t->left) < t->data <= value, we will only find
+        // greater values in the right subtree, so we can skip the recursion on
+        // the left subtree in this branch to save some work
+        return count_greater(t->right, value);
+    }
 }
 
 int main(int argc, char **argv) {

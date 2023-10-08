@@ -8,7 +8,7 @@
  * least 1 child node.
  *
  * Time complexity: TODO
- * (where n is the number of nodes)
+ * (where n is the number of nodes, h is the height)
  */
 int count_internal(BST t) {
     // TODO: Complete this function!
