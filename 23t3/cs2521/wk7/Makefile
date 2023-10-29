@@ -1,4 +1,4 @@
-CC=gcc
+CC=clang
 CFLAGS=-Wall -Werror
 
 is_euler_path: is_euler_path.o Graph.o

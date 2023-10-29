@@ -2,16 +2,16 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Graph.h"
+#include "Digraph.h"
 
-struct graph {
+struct digraph {
     bool **adj;
     int vertices;
     int edges;
 };
 
-Graph graph_new(int n) {
-    Graph g = malloc(sizeof(*g));
+Digraph digraph_new(int n) {
+    Digraph g = malloc(sizeof(*g));
     g->adj = malloc(n * sizeof(bool *));
     for (Vertex v = 0; v < n; v++) {
         g->adj[v] = malloc(n * sizeof(bool));
@@ -23,7 +23,7 @@ Graph graph_new(int n) {
     return g;
 }
 
-void graph_free(Graph g) {
+void digraph_free(Digraph g) {
     for (Vertex v = 0; v < g->vertices; v++) {
         free(g->adj[v]);
     }
@@ -31,21 +31,21 @@ void graph_free(Graph g) {
     free(g);
 }
 
-void graph_insert_edge(Graph g, Vertex u, Vertex v) {
-    g->adj[u][v] = g->adj[v][u] = true;
+void digraph_insert_edge(Digraph g, Vertex u, Vertex v) {
+    g->adj[u][v] = true;
     g->edges++;
 }
 
-bool graph_adjacent(Graph g, Vertex u, Vertex v) {
+bool digraph_adjacent(Digraph g, Vertex u, Vertex v) {
     bool v_exists = 0 <= v && v < g->vertices;
     bool w_exists = 0 <= v && v < g->vertices;
     return v_exists && w_exists && g->adj[u][v];
 }
 
-int graph_num_vertices(Graph g) {
+int digraph_num_vertices(Digraph g) {
     return g->vertices;
 }
 
-int graph_num_edges(Graph g) {
+int digraph_num_edges(Digraph g) {
     return g->edges;
 }
