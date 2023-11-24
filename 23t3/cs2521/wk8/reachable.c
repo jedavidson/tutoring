@@ -6,11 +6,20 @@
 
 static Digraph generate_example_digraph(void);
 
+static void dfs(Digraph g, Vertex v, Set s) {
+    add_to_set(s, v);
+    for (Vertex w = 0; w < digraph_num_vertices(g); w++) {
+        if (digraph_adjacent(g, v, w) && !set_contains(s, w)) {
+            dfs(g, w, s);
+        }
+    }
+}
+
 /** Computes the set of reachable vertices from a starting vertex. */
 Set reachable(Digraph g, Vertex src) {
     Set s = new_set();
-
-    // TODO: Complete this function!
+    add_to_set(s, src);
+    dfs(g, src, s);
     return s;
 }
 
