@@ -1,7 +1,7 @@
 CC = clang
 CFLAGS = -Wall -Werror
 
-TARGETS = length sorted delete_first two_sum
+TARGETS = length sorted delete_first
 
 $(TARGETS): List.o
 
