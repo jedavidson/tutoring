@@ -5,14 +5,22 @@
 
 /** Returns the length of a linked list. */
 int length(List l) {
-    // TODO: Complete this function!
-    return 0;
+    // Base case: an empty list has length 0
+    if (l == NULL) {
+        return 0;
+    }
+
+    // Recursive case: the length of the list is at least 1,
+    // plus however long the rest of the list past the head is
+    return 1 + length(l->next);
 }
 
 /** Returns the length of a containerised linked list. */
 int containerised_length(ConList cl) {
-    // TODO: Complete this function!
-    return 0;
+    // We just take the head pointer out of the box,
+    // and then call the function we previously wrote which
+    // can do actual recursion (since it's a Node *)
+    return length(cl->head);
 }
 
 int main(int argc, char **argv) {
