@@ -3,8 +3,11 @@
 #include <stdlib.h>
 
 /**
- * Determines if there are two numbers in the array which sum to the target value.
+ * Determines if there are two numbers in the array which sum to the target
+ * value.
+ *
  * Time complexity:
+ * (where n is the length)
  */
 bool two_sum(int *nums, int length, int target) {
     // TODO: Complete this function!
